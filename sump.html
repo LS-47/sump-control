@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Sump Pump Control</title>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+<style>
+
+body{
+font-family:Arial;
+text-align:center;
+margin-top:100px;
+}
+
+button{
+font-size:20px;
+padding:15px 40px;
+margin:20px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<h1>Sump Pump Control</h1>
+
+<button onclick="pumpOn()">Pump ON</button>
+
+<button onclick="pumpOff()">Pump OFF</button>
+
+
+<script>
+
+var firebaseConfig = {
+  apiKey: "AIzaSyAIQpV3oanVFqfNTMP-c6dEW_qhh2GbewA",
+  authDomain: "sump-control-85b65.firebaseapp.com",
+  databaseURL: "https://sump-control-85b65-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "sump-control-85b65",
+  storageBucket: "sump-control-85b65.firebasestorage.app",
+  messagingSenderId: "1007690213993",
+  appId: "1:1007690213993:web:78af0f2d8a8447f14110f8",
+  measurementId: "G-532FFQ9VKN"
+};
+
+firebase.initializeApp(firebaseConfig);
+
+function pumpOn(){
+firebase.database().ref("pump").set(true);
+}
+
+function pumpOff(){
+firebase.database().ref("pump").set(false);
+}
+
+</script>
+
+</body>
+</html>
